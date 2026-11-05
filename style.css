@@ -1,0 +1,426 @@
+
+/* =====================================
+   1. GLOBAL CSS
+===================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Inter", sans-serif;
+    background: #15223d;
+    color: white;
+    line-height: 1.6;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+/* =====================================
+   2. HEADER / NAVBAR
+===================================== */
+
+.header {
+    min-height: 80px;
+    background: #14213a;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 2.5%;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Logo */
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo img {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+    background: white;
+    border-radius: 9px;
+}
+
+.logo-text h2 {
+    font-size: 19px;
+    font-weight: 800;
+    line-height: 1.3;
+}
+
+.logo-text span {
+    font-size: 9px;
+    letter-spacing: 1.5px;
+    color: #c1c7d1;
+}
+
+/* Navbar */
+
+.navbar {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+}
+
+.navbar a {
+    position: relative;
+    color: #d0d3dc;
+    font-size: 14px;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.navbar a:hover {
+    color: #ffbd24;
+}
+
+/* Active Link */
+
+.navbar a.active {
+    color: #ffbd24;
+}
+
+/* Underline Animation */
+
+.navbar a::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background: #ffbd24;
+    bottom: -10px;
+    left: 0;
+    transition: width 0.3s ease;
+}
+
+.navbar a.active::after,
+.navbar a:hover::after,
+.navbar a:focus-visible::after {
+    width: 100%;
+}
+
+
+/* =====================================
+   3. HERO SECTION
+===================================== */
+
+.hero {
+    min-height: 568px;
+    background: linear-gradient(
+        110deg,
+        #303b56 0%,
+        #202d49 55%,
+        #14213a 100%
+    );
+    display: flex;
+    align-items: center;
+    padding: 60px 2.5%;
+}
+
+.hero-content {
+    max-width: 700px;
+}
+
+/* Hero Tag */
+
+.tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    padding: 7px 13px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 30px;
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 26px;
+}
+
+.tag::before {
+    content: "";
+    width: 8px;
+    height: 8px;
+    background: #ffbd24;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+/* Hero Heading */
+
+.hero h1 {
+    font-size: clamp(42px, 5.5vw, 70px);
+    line-height: 1.12;
+    font-weight: 900;
+    letter-spacing: -2px;
+    margin-bottom: 26px;
+}
+
+.hero h1 span {
+    color: #ffbd24;
+}
+
+/* Hero Paragraph */
+
+.hero-content > p:not(.tag) {
+    max-width: 670px;
+    color: #c6cbd5;
+    font-size: 19px;
+    line-height: 1.7;
+    margin-bottom: 40px;
+}
+
+/* Hero Buttons */
+
+.hero-buttons {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.hero-buttons a {
+    display: inline-block;
+    text-align: center;
+    padding: 17px 32px;
+    border-radius: 9px;
+    font-size: 16px;
+    font-weight: 700;
+    transition: all 0.3s ease;
+}
+
+/* First Button */
+
+.hero-buttons a:first-child {
+    background: #ffbd24;
+    color: #17223a;
+    box-shadow: 0 7px 20px rgba(255, 189, 36, 0.2);
+}
+
+.hero-buttons a:first-child:hover {
+    background: #e9a714;
+    transform: translateY(-3px);
+}
+
+/* Second Button */
+
+.hero-buttons a:last-child {
+    color: white;
+    border: 2px solid #667187;
+}
+
+.hero-buttons a:last-child:hover {
+    background: white;
+    color: #17223a;
+    border-color: white;
+}
+
+
+/* =====================================
+   4. STATISTICS SECTION
+===================================== */
+
+.stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    background: #14213a;
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.stat-box {
+    text-align: center;
+    padding: 32px 10px;
+    border-right: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.stat-box:last-child {
+    border-right: none;
+}
+
+.stat-box h2 {
+    color: #ffbd24;
+    font-size: 36px;
+    font-weight: 800;
+}
+
+.stat-box p {
+    color: #c1c7d1;
+    font-size: 14px;
+    margin-top: 8px;
+}
+
+
+/* =====================================
+   5. FOOTER
+===================================== */
+
+.footer {
+    background: #101c33;
+    padding: 25px 2.5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer p {
+    color: #c1c7d1;
+    font-size: 13px;
+}
+
+.footer address {
+    color: #c1c7d1;
+    font-size: 13px;
+    font-style: normal;
+}
+
+
+/* =====================================
+   6. ACCESSIBILITY
+===================================== */
+
+.navbar a:focus-visible,
+.logo:focus-visible,
+.hero-buttons a:focus-visible {
+    outline: 2px solid #ffbd24;
+    outline-offset: 5px;
+}
+
+
+/* =====================================
+   7. TABLET & MOBILE RESPONSIVE
+===================================== */
+
+@media (max-width: 768px) {
+
+    /* Header */
+
+    .header {
+        flex-direction: column;
+        gap: 20px;
+        padding: 18px;
+    }
+
+    .navbar {
+        gap: 17px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .navbar a {
+        font-size: 12px;
+    }
+
+    /* Hero */
+
+    .hero {
+        min-height: auto;
+        padding: 75px 22px;
+    }
+
+    .hero h1 {
+        font-size: 43px;
+        letter-spacing: -1.5px;
+    }
+
+    .hero-content > p:not(.tag) {
+        font-size: 16px;
+    }
+
+    .hero-buttons a {
+        padding: 15px 20px;
+        font-size: 14px;
+    }
+
+    /* Statistics */
+
+    .stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .stat-box {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .stat-box:nth-child(2) {
+        border-right: none;
+    }
+
+    .stat-box:nth-child(3),
+    .stat-box:nth-child(4) {
+        border-bottom: none;
+    }
+
+    /* Footer */
+
+    .footer {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+
+/* =====================================
+   8. SMALL MOBILE DEVICES
+===================================== */
+
+@media (max-width: 400px) {
+
+    .hero h1 {
+        font-size: 35px;
+    }
+
+    .tag {
+        font-size: 10px;
+    }
+
+    .navbar {
+        gap: 12px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+    }
+
+    .hero-buttons a {
+        width: 100%;
+    }
+
+    .stat-box h2 {
+        font-size: 30px;
+    }
+}
+
+
+/* =====================================
+   9. REDUCED MOTION
+===================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        transition: none !important;
+        animation: none !important;
+    }
+}
